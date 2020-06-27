@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import style from './page1.module.scss';
-import { addPostActionCreator, onPostActionCreator } from '../../store/state';
+import { addPostActionCreator, onPostActionCreator } from '../../store/Reducers/NameReducer';
 
 
 

@@ -1,7 +1,6 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_NAME_TEXT = 'UPDATE-NEW-NAME-TEXT';
-const ADD_MESSAGE = 'ADD-MESSAGE';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+import NameReducer from "./Reducers/NameReducer";
+import MessageReducer from "./Reducers/MessageReducer";
+
 
 let store = {
     _state : {
@@ -36,47 +35,11 @@ let store = {
     },
 
     dispatch(action){
-        if(action.type === 'ADD-POST'){
-            let newPost= {
-                id : 5,
-                name : this._state.NamePage.Textarea
-            }
-            this._state.NamePage.NameList.push(newPost);
-            this._state.NamePage.Textarea = '';
-            this._callSubscriber(this._state);
-        }
-        else if(action.type === 'UPDATE-NEW-NAME-TEXT'){
-            this._state.NamePage.Textarea = action.newText;
-            this._callSubscriber(this._state);
-        }
-        else if(action.type === 'ADD-MESSAGE'){
-            let newMessage= {
-                id : 5,
-                message : this._state.MessagePage.AreaValue
-            }
-            this._state.MessagePage.MessageList.push(newMessage);
-            this._state.MessagePage.AreaValue = '';
-            this._callSubscriber(this._state);
-        }
-        else if(action.type === 'UPDATE-NEW-MESSAGE-TEXT'){
-            this._state.MessagePage.AreaValue = action.newText;
-            this._callSubscriber(this._state);
-        }
+
+        this._state.NamePage =  NameReducer(this._state.NamePage, action);
+        this._state.MessagePage =  MessageReducer(this._state.MessagePage, action);
+        this._callSubscriber(this._state);
+        
     }
 }
-
-
-export const addPostActionCreator=()=>{
-    return { type : ADD_POST}
-}
-export const onPostActionCreator=(text)=>{
-    return { type : UPDATE_NEW_NAME_TEXT, newText : text}
-}
-export const addMessageActionCreator=()=>{
-    return { type : ADD_MESSAGE}
-}
-export const onMessageActionCreator=(text)=>{
-    return { type : UPDATE_NEW_MESSAGE_TEXT, newText : text}
-}
-
 export default store;

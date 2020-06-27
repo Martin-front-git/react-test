@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import style from './page2.module.scss';
-import { addMessageActionCreator, onMessageActionCreator } from '../../store/state';
+import { addMessageActionCreator, onMessageActionCreator } from '../../store/Reducers/MessageReducer';
 
 const Page2 =(props)=>{
     let MessageConst = props.MessagePage.MessageList.map(ms=><NavLink className={style.messages} to={ms.id}>{ms.message}</NavLink>)
