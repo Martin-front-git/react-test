@@ -1,0 +1,38 @@
+
+.names_block{
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    position: absolute;
+    left: 200px;
+    font-family: cursive;
+    .names_div{
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        .names{
+            text-decoration: none;
+            font-size: 20px;
+            font-family: cursive;
+            color: black;
+        }
+    }
+  .area_div{
+      display: flex;
+      flex-direction: column;
+    .area{
+        width: 200px;
+        height: 100px;
+        border-radius: 10px;
+        font-size: 20px;
+    }
+    .btn{
+        width: 200px;
+        height: 30px;
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        text-align: center;
+        margin-top: 10px;
+    }
+  }
+}
