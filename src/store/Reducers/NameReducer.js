@@ -1,7 +1,18 @@
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_NAME_TEXT = "UPDATE-NEW-NAME-TEXT";
 
-const NameReducer = (state, action) => {
+let initialState = {
+  NameList : [
+      {id:1, name : 'Martin'},
+      {id:2, name : 'Arman'},
+      {id:3, name : 'Karen'},
+      {id:4, name : 'Vahan'},
+  ],
+  Textarea : 'Hello World'
+}
+
+
+const NameReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST:
       let newPost = {

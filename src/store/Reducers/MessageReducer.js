@@ -1,7 +1,18 @@
 const ADD_MESSAGE = "ADD-MESSAGE";
 const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
 
-const MessageReducer = (state, action) => {
+let initialState = {
+  MessageList : [
+      {id : 1, message : 'Hello Martin'},
+      {id : 2, message : 'How are you?'},
+      {id : 3, message : 'My name is Lara Croft'},
+      {id : 4, message : 'I am Frontend Developer'}
+  ],
+  AreaValue : 'Hello Martin'
+}
+
+
+const MessageReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_MESSAGE:
       let newMessage = {
