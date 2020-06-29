@@ -11,8 +11,8 @@ function App(props) {
   return (
     <div>
       <Header/>
-      <Route path='/Names' render={()=><NamesContainer store={props.store}/>}/>
-      <Route path='/Messages' render={()=><MessagesContainer store={props.store}/>}/>
+      <Route path='/Names' render={()=><NamesContainer/>}/>
+      <Route path='/Messages' render={()=><MessagesContainer/>}/>
     </div>
   );
 }
