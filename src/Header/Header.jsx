@@ -7,10 +7,10 @@ const Header =()=>{
     return(
         <div className={style.head_div}>
             <div>
-                <NavLink to='Page1' className={style.nav}>Page1</NavLink>
+                <NavLink to='Names' className={style.nav}>Names</NavLink>
             </div>
             <div>
-                <NavLink to='Page2' className={style.nav}>Page2</NavLink>
+                <NavLink to='Messages' className={style.nav}>Messages</NavLink>
             </div>
         </div>
     )

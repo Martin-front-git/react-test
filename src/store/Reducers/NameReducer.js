@@ -7,6 +7,7 @@ let initialState = {
       {id:2, name : 'Arman'},
       {id:3, name : 'Karen'},
       {id:4, name : 'Vahan'},
+      {id:5, name : 'Artur'},
   ],
   Textarea : 'Hello World'
 }

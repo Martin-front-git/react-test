@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import Header from './Header/Header';
 import { Route } from 'react-router-dom';
-import Page1 from './Header/Pages/page1';
-import Page2 from './Header/Pages/page2';
+import NamesContainer from './Header/Pages/Names/NamesContainer';
+import MessagesContainer from './Header/Pages/Messages/MessagesContainer';
 
 
 
@@ -11,12 +11,8 @@ function App(props) {
   return (
     <div>
       <Header/>
-      <Route path='/Page1' render={()=><Page1 NamePage={props.state.NamePage} 
-                                              dispatch={props.dispatch}
-                                              Textarea={props.state.NamePage.Textarea}/>}/>
-      <Route path='/Page2' render={()=><Page2 MessagePage={props.state.MessagePage}
-                                              dispatch={props.dispatch}
-                                              AreaValue={props.state.MessagePage.AreaValue}/>}/>
+      <Route path='/Names' render={()=><NamesContainer store={props.store}/>}/>
+      <Route path='/Messages' render={()=><MessagesContainer store={props.store}/>}/>
     </div>
   );
 }
