@@ -1,13 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import style from './Names.module.scss';
-import { connect } from 'react-redux';
 
 
-const Names = (props) => {
-    const { NameList } = props
-    console.log("Props", props)
-    const NameConst = NameList && NameList.map(nm=><NavLink className={style.names} to={nm.id}>{nm.name}</NavLink>)
+
+const Names =(props)=>{
+    const NameConst = props.NameList.map(nm=><NavLink className={style.names} to={nm.id}>{nm.name}</NavLink>)
     
     let newPost = React.createRef();
 
@@ -31,10 +29,4 @@ const Names = (props) => {
     )
 }
 
-const get = state => {
-    return {
-        NameList: state.NamePage.NameList
-    }
-}
-
-export default connect(get)(Names);
+export default Names;
