@@ -15,17 +15,22 @@ let initialState = {
 
 const NameReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_POST:
+    case ADD_POST: {
       let newPost = {
         id: 5,
         name: state.Textarea,
       };
-      state.NameList.push(newPost);
-      state.Textarea = "";
-      return state;
-    case UPDATE_NEW_NAME_TEXT:
-      state.Textarea = action.newText;
-      return state;
+      let StateCopy = {...state};
+      StateCopy.NameList.push(newPost);
+      StateCopy.Textarea = "";
+      return StateCopy;
+    }
+    case UPDATE_NEW_NAME_TEXT:{
+      let StateCopy = {...state};
+      StateCopy.Textarea = action.newText;
+      return StateCopy;
+    }
+      
     default:
       return state;
   }

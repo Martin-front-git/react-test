@@ -14,7 +14,7 @@ const Names =(props)=>{
     }
     let onPostChange =()=>{
         let text = newPost.current.value;
-        props.onPostActionCreator(text);
+        props.onPostChange(text);
     }
     return(
         <div className={style.names_block}>

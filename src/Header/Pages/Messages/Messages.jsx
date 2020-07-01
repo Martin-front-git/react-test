@@ -12,7 +12,7 @@ const Messages =(props)=>{
     }
     let onMessageChange =()=>{
         let text = areaRef.current.value;
-        props.onMessageActionCreator(text);
+        props.onMessageChange(text);
     }
     return(
        <div className={style.mes_block}>
@@ -26,5 +26,5 @@ const Messages =(props)=>{
        </div>
     )
 }
-
+//
 export default Messages;
