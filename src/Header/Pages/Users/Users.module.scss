@@ -1,0 +1,18 @@
+.users_block{
+    display: flex;
+    margin-left: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+   .users_div{
+       padding:10px 5px;
+       .image{
+           display: flex;
+           width: 80%;
+       }
+    .info_div{
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid black;
+        margin-top: 5px;
+    }
+   }
+}

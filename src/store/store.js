@@ -1,5 +1,6 @@
 import NameReducer from "./Reducers/NameReducer";
 import MessageReducer from "./Reducers/MessageReducer";
+import UsersReducer from "./Reducers/UsersReducer";
 
 
 let store = {
@@ -38,6 +39,7 @@ let store = {
 
         this._state.NamePage =  NameReducer(this._state.NamePage, action);
         this._state.MessagePage =  MessageReducer(this._state.MessagePage, action);
+        this._state.UsersPage =  UsersReducer(this._state.UsersPage, action);
         this._callSubscriber(this._state);
         
     }

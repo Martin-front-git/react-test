@@ -12,6 +12,9 @@ const Header =()=>{
             <div>
                 <NavLink to='Messages' className={style.nav}>Messages</NavLink>
             </div>
+            <div>
+                <NavLink to='Users' className={style.nav}>Find Users</NavLink>
+            </div>
         </div>
     )
 }
