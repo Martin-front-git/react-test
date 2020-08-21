@@ -1,37 +1,14 @@
 import React from "react";
 import style from "./Users.module.scss";
+import * as axios from 'axios';
 
 let Users = (props) => {
  if(props.users.length === 0){
-    props.setUsers([
-        {
-          id: 1,
-          photoUrl:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSEpUUJVqlxCFXUdaSn7ieT0ucZkZGX1NlmBQ&usqp=CAU",
-          followed: true,
-          name: "Martin Hovhannisyan",
-          text: "Hello World",
-          location: { country: "Armenia", city: "Gyumri" },
-        },
-        {
-          id: 2,
-          photoUrl:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSEpUUJVqlxCFXUdaSn7ieT0ucZkZGX1NlmBQ&usqp=CAU",
-          followed: false,
-          name: "Karen Abrahamyan",
-          text: "Hello Boys",
-          location: { country: "Russia", city: "Moscow" },
-        },
-        {
-          id: 3,
-          photoUrl:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSEpUUJVqlxCFXUdaSn7ieT0ucZkZGX1NlmBQ&usqp=CAU",
-          followed: true,
-          name: "John Wick",
-          text: "Hello Girls",
-          location: { country: "Ukraine", city: "Kiev" },
-        },
-      ]);
+
+    axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response=>{
+        props.setUsers(response.data.items);
+    })
+    
  }
 
   return (
@@ -40,7 +17,7 @@ let Users = (props) => {
         <div key={u.id} className={style.users_div}>
           <span>
             <div>
-              <img className={style.image} src={u.photoUrl} />
+              {/* <img className={style.image} src={u.photoUrl} /> */}
             </div>
             <div>
               {u.followed ? (
@@ -64,12 +41,11 @@ let Users = (props) => {
           </span>
           <span className={style.info_div}>
             <span>
+              <div>{u.id}</div>
               <div>{u.name}</div>
-              <div>{u.text}</div>
             </span>
             <span>
-              n<div>{u.location.country}</div>
-              <div>{u.location.city}</div>
+              <div>{u.status}</div>
             </span>
           </span>
         </div>

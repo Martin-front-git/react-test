@@ -1,12 +1,13 @@
 .head_div{
     width: 100%;
     height: 70px;
-    background-color: red;
+    background-image: url('https://img5.goodfon.ru/wallpaper/nbig/3/74/abstract-background-gradient-design-geometriia-abstraktsiia.jpg');
+    background-size: cover;
+    background-position: center;
     display: flex;
     div{
         position: relative;
         top: 10px;
-        left: 200px;
         padding: 10px;
         font-size: 20px;
         .nav{

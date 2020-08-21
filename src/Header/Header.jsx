@@ -15,6 +15,9 @@ const Header =()=>{
             <div>
                 <NavLink to='Users' className={style.nav}>Find Users</NavLink>
             </div>
+            <div>
+                <NavLink to='Hooks' className={style.nav}>Hooks Page</NavLink>
+            </div>
         </div>
     )
 }
